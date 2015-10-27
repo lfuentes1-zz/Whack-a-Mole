@@ -1,0 +1,21 @@
+.grid {
+	display: table;
+	margin: 0 auto;
+	/*width: 320px;*/
+}
+
+
+.grid ul li {
+	list-style: none;
+	display: inline-block;
+	/*display: table-row;*/
+	padding: 50px;
+	border: 1px solid black;
+	background-color: tan;
+	/*background: url(/img/mole.png) no-repeat center center;*/
+}
+
+h1 {
+	text-align: center;
+}
+
