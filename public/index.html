@@ -7,21 +7,36 @@
 	<link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+	<main>
+		<h1>Whack-A-Mole Game</h1>
 
-	<h1>Whack-A-Mole Game</h1>
+		<section class="info">
+			<h3>Score: <span id="player-score"></span></h3>
+			<h3>Highest Score: <span id="highest-score"></span></h3>
+		</section>
+		
+		<section class="gameboard">
 
-<div class="grid">
-	<ul>
-		<li><img src="/img/mole.png" alt="0"></li>
-		<li><img src="/img/mole.png" alt="1"></li>
-		<li><img src="/img/mole.png" alt="2"></li>
-		<li><img src="/img/mole.png" alt="3"></li>
-		<li><img src="/img/mole.png" alt="4"></li>
-		<li><img src="/img/mole.png" alt="5"></li>
-		<li><img src="/img/mole.png" alt="6"></li>
-		<li><img src="/img/mole.png" alt="7"></li>
-		<li><img src="/img/mole.png" alt="8"></li>
-	</ul>
+			<div class="block" data-block="0"></div>
+			<div class="block" data-block="1"></div>
+			<div class="block" data-block="2"></div>
+			<br>
+			
+			<div class="block" data-block="3"></div>
+			<div class="block" data-block="4"></div>
+			<button class="start-button">Start</button>
+			<div class="block" data-block="5"></div>
+			<br>
+			
+			<div class="block" data-block="6"></div>
+			<div class="block" data-block="7"></div>
+			<div class="block" data-block="8"></div>
+
+			<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+			<script src="/js/index.js"></script>
+
+		</section>
+	</main>
 </div>
 
 
