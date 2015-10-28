@@ -1,45 +1,50 @@
+@font-face {
+    font-family: "minecraft-font"; /*a name to be used later*/
+    src: url('/fonts/Minecrafter.Alt.ttf'); /*URL to font*/
+}
+
+body {
+	font-family: "minecraft-font";
+	background: url("/img/background.jpg");
+    height:100%;
+    width:100%;
+}
+
+
 .gameboard {
 	display: table;
 	margin: 0 auto;
-	/*width: 320px;*/
 	position: relative;
 }
-
 
 .block {
 	
 	display: inline-block;
-	/*display: table-row;*/
-	width: 0px;
-	height: 0px;
-	padding: 100px;
-	border: 1px solid black;
+	width: 200px;
+	height: 200px;
+	/*padding: 100px;*/
+	/*border: 1px solid black;*/
+	border: 1px solid transparent;
 	/*background-color: #CCA37A;*/
-	/*background: url(/img/mole.png) no-repeat center;*/
 }
 
 .img-class {
 	background: url(/img/mole.png) no-repeat center center;
-	/*list-style-image: */
 }
 
-h1 {
+.title {
 	text-align: center;
-}
+	text-shadow: 1px 0 white, 0 1px black, 5px 0 black, 0 -1px white;
 
-.center-image {
-	
 }
 
 .start-button {
 	position:absolute;
-	/*85*/
 	padding: 50px;
 	margin-left: -205px;
 	margin-top: 10px;
 	background-color: #CCA37A;
 }
-
 
 .start-button:focus {
 	outline: none;

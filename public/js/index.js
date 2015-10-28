@@ -1,8 +1,11 @@
 (function (){
 "use strict";
 
+	$("#highest-score").html(window.localStorage.counterValue);
+
 	var score = 0;
 	var randomNumber;
+	var gameEnabled = false;
 
 	var randomImageGenerator = function () {
 		var maxNumber = 9;
@@ -23,7 +26,6 @@
 	var updateScore = function (imgClicked) {
 		if (imgClicked == randomNumber) 
 		{
-			console.log ("inside the funciton");
 			score++;
 			$("#player-score").html(score);
 		}
@@ -34,17 +36,27 @@
 		$("#player-score").html(score);
 	}
 
+	var resetGame = function (){
+		//remove all moles currently on the page		
+		$(".img-class").removeClass("img-class");
+
+		//Re-appear the start button
+		$(".start-button").css("display", "inline");
+		clearScore();
+		gameEnabled = false;
+	}
+
 	var gameOver = function (){
 		alert("Game Over!");
 		updateHighestScore();
-		$(".start-button").css("display", "inline");
-		//remove all moles currently on the page
-		$(".img-class").css("display", "none");
+		resetGame();
 	}
 		
 	//Event Listener
 	$(".start-button").click (function () {
+		gameEnabled = true;
 		clearScore();
+		updateHighestScore();
 		//Remove the start button
 		$(this).css("display", "none");
 		randomImageGenerator();
@@ -54,14 +66,17 @@
 	//Event Listener
 	$(".block").click (function () {
 
-		var imageClicked = $(this).attr("data-block");
-		var blockNumber = "[data-block='" + imageClicked + "']";
+		if (gameEnabled) {
+			var imageClicked = $(this).attr("data-block");
+			var blockNumber = "[data-block='" + imageClicked + "']";
 
-		//Remove the image
-		$(blockNumber).removeClass("img-class");
-		updateScore (parseInt(imageClicked));
-		randomImageGenerator();
-
+			//Remove the image
+			$(blockNumber).removeClass("img-class");
+			updateScore (parseInt(imageClicked));
+			randomImageGenerator();
+		}
 	});
+
+	clearScore();
 
 })();
