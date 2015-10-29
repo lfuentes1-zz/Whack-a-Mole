@@ -23,8 +23,8 @@ body {
 	width: 200px;
 	height: 200px;
 	/*padding: 100px;*/
-	/*border: 1px solid black;*/
-	border: 1px solid transparent;
+	border: 1px solid black;
+	/*border: 1px solid transparent;*/
 	/*background-color: #CCA37A;*/
 }
 

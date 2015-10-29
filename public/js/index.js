@@ -12,7 +12,9 @@
 		randomNumber = Math.floor(Math.random() * maxNumber);
 		var blockNumber = "[data-block='" + randomNumber + "']";
 
+		//if the click equals to the random number from previous round, then 
 		$(blockNumber).addClass("img-class");
+		//else don't add another mole because then there will be two moles on the screen
 	}
 
 	var updateHighestScore = function () {
@@ -60,12 +62,11 @@
 		//Remove the start button
 		$(this).css("display", "none");
 		randomImageGenerator();
-		setTimeout(gameOver, 5000);
+		setTimeout(gameOver, 15000);
 	});	
 
 	//Event Listener
 	$(".block").click (function () {
-
 		if (gameEnabled) {
 			var imageClicked = $(this).attr("data-block");
 			var blockNumber = "[data-block='" + imageClicked + "']";
@@ -76,7 +77,4 @@
 			randomImageGenerator();
 		}
 	});
-
-	clearScore();
-
 })();
