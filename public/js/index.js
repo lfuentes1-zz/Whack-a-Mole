@@ -5,11 +5,13 @@ $(document).ready (function(){
 	var randomNumber;
 	var gameEnabled = false;
 	var timeOut;
+	var weaponSelection;
 
 	var initializeGame = function () {
 		//if the value is undefined then set it...home computer
 		$("#highest-score").html(window.localStorage.counterValue);
 		$("img").css("display", "none");
+		// weaponSelection = $(".cursor > img");
 	}
 
 	var removeMobFromGameBoard = function (blockNumber) {
@@ -25,7 +27,7 @@ $(document).ready (function(){
 		if (!$(".block").hasClass("mobOnBoard")) {
 			$(blockNumber + ">img").fadeIn(150).css("display", "inline");
 			//Change the cursor when cursor is on top of the image only
-			$(blockNumber + ">img").css({'cursor': 'url(/cursors/sword_diamond.png), default'});
+			$(blockNumber + ">img").css({'cursor': 'url(/cursors/axes.png), default'});
 			//Add mobOnBoard class
 			$(blockNumber).addClass("mobOnBoard");
 			timeOut = setTimeout(function(){
